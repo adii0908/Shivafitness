@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aditya Fitness Gym</title>
+  <title>Shiva Fitness</title>
   <style>
     body { margin:0; font-family:Arial; background:#fff8d2; }
     header { background:linear-gradient(45deg,#ffcc00,#ffdf4d); padding:25px; text-align:center; font-size:32px; font-weight:bold; color:#000; }
@@ -35,7 +35,7 @@
 
 <!-- MAIN APP -->
 <div id="app" style="display:none;">
-<header>ADITYA FITNESS GYM</header>
+<header>Shiva FITNESS</header>
 <nav>
   <button onclick="showPage('intro')">Gym Intro</button>
   <button onclick="showPage('members')">Members</button>
@@ -46,7 +46,7 @@
 
 <section id="intro" class="active">
   <div class="card">
-    <h2>Welcome to Aditya Fitness Gym</h2>
+    <h2>Welcome to Shiva Fitness Gym</h2>
     <p>Transform your fitness journey with strength, cardio, training programs and premium equipment.</p>
   </div>
 </section>
