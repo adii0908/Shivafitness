@@ -85,7 +85,8 @@
 </section>
 
 <section id="media">
-  <div class="card"><h2>Photos</h2><divstyle="height:350px;background:#ffe98a;border-radius:8px;">
+  <div class="card"><h2>Photos</h2>
+    <div style="height:350px;background:#ffe98a;border-radius:8px;">
 <img src="https://i.ibb.co/bMzMvLQj/1770574994743.jpg" alt="1770574994743" border="0" height= 250px, width=250 px ></div></div>
   <div class="card"><h2>Videos</h2><div style="height:150px;background:#ffe98a;border-radius:8px;"></div></div>
 </section>
