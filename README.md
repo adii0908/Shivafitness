@@ -180,6 +180,29 @@ function addMember(){
   saveMembers();
   loadMembers();
   }
+  function loadMembers(){
+  const table = document.getElementById("memberTable");
+  if(!table) return;
+
+  table.innerHTML = "";
+
+  members.forEach(m=>{
+    table.innerHTML += `
+      <tr>
+        <td>${m.id}</td>
+        <td>${m.name}</td>
+        <td>${m.expiry}</td>
+        <td>${m.plan}</td>
+        <td>₹${m.fees}</td>
+        <td>
+          <button class="delete-btn" onclick="deleteMember(${m.id})">
+            Delete
+          </button>
+        </td>
+      </tr>
+    `;
+  });
+  }
 
 function deleteMember(i){
   members = members.filter(m=>m.id!==i);
