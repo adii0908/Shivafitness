@@ -113,7 +113,7 @@ input,select{padding:10px;width:95%;border-radius:6px;border:1px solid #aaa;marg
 
 <script>
 /* ===== CHANGE THESE LATER ===== */
-const OWNER_EMAIL = "yourgymemail@gmail.com";
+const OWNER_EMAIL = "htmlcoderbytqb.com@gmail.com";
 const OWNER_WHATSAPP = "919999999999";
 /* ============================= */
 
@@ -236,4 +236,4 @@ function changePassword(){
 
 </body>
 <footer style="text-align:center;padding:15px;background:#ffcc00;font-weight:bold;">
-  © 2026 Shiva Fitness. All Rights Reserved.by <b>><i>ADITYA CHATURVEDI</i>></b>
+  © 2026 Shiva Fitness. All Rights Reserved.by <b><i>ADITYA CHATURVEDI</i></b>
