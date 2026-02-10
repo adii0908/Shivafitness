@@ -151,11 +151,19 @@ function getExpiryDate(admission, plan){
 
 function addMember(){
   console.log("Button working");
-  let nameVal = name.value.trim();
-  let emailVal = email.value.trim();
-  let phoneVal = phone.value.trim();
-  let feesVal = fees.value.trim();
-  let admissionVal = admission.value;
+
+  let nameInput = document.getElementById("name");
+  let emailInput = document.getElementById("email");
+  let phoneInput = document.getElementById("phone");
+  let feesInput = document.getElementById("fees");
+  let admissionInput = document.getElementById("admission");
+  let planInput = document.getElementById("plan");
+
+  let nameVal = nameInput.value.trim();
+  let emailVal = emailInput.value.trim();
+  let phoneVal = phoneInput.value.trim();
+  let feesVal = feesInput.value.trim();
+  let admissionVal = admissionInput.value;
 
   if(nameVal === "" || emailVal === "" || phoneVal === "" || feesVal === "" || admissionVal === ""){
     alert("Fill all fields");
@@ -167,10 +175,10 @@ function addMember(){
     name: nameVal,
     email: emailVal,
     phone: phoneVal,
-    plan: plan.value,
+    plan: planInput.value,
     fees: feesVal,
-    expiry: getExpiryDate(admissionVal, plan.value),
-    notified: false
+    expiry: getExpiryDate(admissionVal, planInput.value),
+    notified:false
   };
 
   members.push(m);
@@ -178,26 +186,13 @@ function addMember(){
   saveMembers();
   loadMembers();
 
-  // clear inputs
-  name.value = "";
-  email.value = "";
-  phone.value = "";
-  fees.value = "";
-               }
-
-function loadMembers(){
-  memberTable.innerHTML="";
-  members.forEach(m=>{
-    memberTable.innerHTML+=`
-    <tr>
-      <td>${m.id}</td>
-      <td>${m.name}</td>
-      <td>${m.expiry}</td>
-      <td>${m.plan}</td>
-      <td>₹${m.fees}</td>
-      <td><button class="delete-btn" onclick="deleteMember(${m.id})">Delete</button></td>
-    </tr>`;
-  });
+  // Clear inputs properly
+  nameInput.value="";
+  emailInput.value="";
+  phoneInput.value="";
+  feesInput.value="";
+  admissionInput.value="";
+                                           
 }
 
 function deleteMember(i){
