@@ -95,6 +95,7 @@ input,select{padding:10px;width:95%;border-radius:6px;border:1px solid #aaa;marg
   <div class="card">
     <h2>Photos</h2>
     <img src="https://i.ibb.co/bMzMvLQj/1770574994743.jpg" height="200">
+    <img src="https://i.ibb.co/4gmHFXBW/1770705007503.jpg" alt="1770705007503" height="200">
   </div>
 </section>
 
