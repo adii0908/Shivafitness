@@ -47,7 +47,7 @@
 <section id="intro" class="active">
   <div class="card">
     <h2>Welcome to Shiva Fitness Gym</h2>
-    <p>Transform your fitness journey with strength, cardio, training programs and premium equipment.</p>
+    <p>Transform your fitness journey with strength, cardio, training programs and premium equipment.Here you are provided with the best machines and equipments...!</p>
   </div>
 </section>
 
