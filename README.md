@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -150,6 +150,7 @@ function getExpiryDate(admission, plan){
 }
 
 function addMember(){
+  console.log("Button working");
   let nameVal = name.value.trim();
   let emailVal = email.value.trim();
   let phoneVal = phone.value.trim();
@@ -231,5 +232,3 @@ function changePassword(){
 </body>
 <footer style="text-align:center;padding:15px;background:#ffcc00;font-weight:bold;">
   © 2026 Shiva Fitness. All Rights Reserved.by <b>><i>ADITYA CHATURVEDI</i>></b>
-</footer>
-</html>
