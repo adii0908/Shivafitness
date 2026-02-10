@@ -70,7 +70,7 @@ input,select{padding:10px;width:95%;border-radius:6px;border:1px solid #aaa;marg
       <option>1 Year</option>
     </select>
     <input id="fees" type="number" placeholder="Fees ₹">
-    <button type="button" class="btn"onclick="addMember()">Add</button>
+    <button type="button" class="btn" onclick="addMember()">Add </button>
   </div>
 
   <div class="card">
