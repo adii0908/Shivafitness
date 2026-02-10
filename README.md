@@ -70,7 +70,7 @@ input,select{padding:10px;width:95%;border-radius:6px;border:1px solid #aaa;marg
       <option>1 Year</option>
     </select>
     <input id="fees" type="number" placeholder="Fees ₹">
-    <button class="btn" onclick="addMember()">Add</button>
+    <button type="button" class="btn"onclick="addMember()">Add</button>
   </div>
 
   <div class="card">
@@ -150,22 +150,16 @@ function getExpiryDate(admission, plan){
 }
 
 function addMember(){
-  console.log("Button working");
+  alert("Add button clicked"); // temporary test
 
-  let nameInput = document.getElementById("name");
-  let emailInput = document.getElementById("email");
-  let phoneInput = document.getElementById("phone");
-  let feesInput = document.getElementById("fees");
-  let admissionInput = document.getElementById("admission");
-  let planInput = document.getElementById("plan");
+  const nameVal = document.getElementById("name").value.trim();
+  const emailVal = document.getElementById("email").value.trim();
+  const phoneVal = document.getElementById("phone").value.trim();
+  const feesVal = document.getElementById("fees").value.trim();
+  const admissionVal = document.getElementById("admission").value;
+  const planVal = document.getElementById("plan").value;
 
-  let nameVal = nameInput.value.trim();
-  let emailVal = emailInput.value.trim();
-  let phoneVal = phoneInput.value.trim();
-  let feesVal = feesInput.value.trim();
-  let admissionVal = admissionInput.value;
-
-  if(nameVal === "" || emailVal === "" || phoneVal === "" || feesVal === "" || admissionVal === ""){
+  if(!nameVal || !emailVal || !phoneVal || !feesVal || !admissionVal){
     alert("Fill all fields");
     return;
   }
@@ -175,9 +169,9 @@ function addMember(){
     name: nameVal,
     email: emailVal,
     phone: phoneVal,
-    plan: planInput.value,
+    plan: planVal,
     fees: feesVal,
-    expiry: getExpiryDate(admissionVal, planInput.value),
+    expiry: getExpiryDate(admissionVal, planVal),
     notified:false
   };
 
@@ -185,15 +179,7 @@ function addMember(){
   id++;
   saveMembers();
   loadMembers();
-
-  // Clear inputs properly
-  nameInput.value="";
-  emailInput.value="";
-  phoneInput.value="";
-  feesInput.value="";
-  admissionInput.value="";
-                                           
-}
+  }
 
 function deleteMember(i){
   members = members.filter(m=>m.id!==i);
