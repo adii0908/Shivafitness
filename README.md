@@ -150,22 +150,39 @@ function getExpiryDate(admission, plan){
 }
 
 function addMember(){
+  let nameVal = name.value.trim();
+  let emailVal = email.value.trim();
+  let phoneVal = phone.value.trim();
+  let feesVal = fees.value.trim();
+  let admissionVal = admission.value;
+
+  if(nameVal === "" || emailVal === "" || phoneVal === "" || feesVal === "" || admissionVal === ""){
+    alert("Fill all fields");
+    return;
+  }
+
   let m = {
     id,
-    name:name.value,
-    email:email.value,
-    phone:phone.value,
-    plan:plan.value,
-    fees:fees.value,
-    expiry:getExpiryDate(admission.value, plan.value),
-    notified:false
+    name: nameVal,
+    email: emailVal,
+    phone: phoneVal,
+    plan: plan.value,
+    fees: feesVal,
+    expiry: getExpiryDate(admissionVal, plan.value),
+    notified: false
   };
-  if(!m.name||!m.email||!m.phone||!fees.value){alert("Fill all fields");return;}
+
   members.push(m);
   id++;
   saveMembers();
   loadMembers();
-}
+
+  // clear inputs
+  name.value = "";
+  email.value = "";
+  phone.value = "";
+  fees.value = "";
+               }
 
 function loadMembers(){
   memberTable.innerHTML="";
