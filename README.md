@@ -111,7 +111,6 @@ input,select{padding:10px;width:95%;border-radius:6px;border:1px solid #aaa;marg
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", loadMembers);
 /* ===== CHANGE THESE LATER ===== */
 const OWNER_EMAIL = "yourgymemail@gmail.com";
 const OWNER_WHATSAPP = "919999999999";
