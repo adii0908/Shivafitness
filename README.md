@@ -1,41 +1,46 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shiva Fitness</title>
-  <style>
-    body { margin:0; font-family:Arial; background:#fff8d2; }
-    header { background:linear-gradient(45deg,#ffcc00,#ffdf4d); padding:25px; text-align:center; font-size:32px; font-weight:bold; color:#000; }
-    nav { background:#ffcc00; padding:12px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
-    nav button { padding:10px 20px; background:#000; color:#ffcc00; border:none; border-radius:6px; cursor:pointer; font-weight:bold; }
-    section { padding:20px; display:none; }
-    .active { display:block; }
-    .card { background:white; padding:20px; border-radius:10px; margin-bottom:20px; box-shadow:0 0 10px #0003; }
-    table { width:100%; border-collapse:collapse; background:white; }
-    table th, table td { padding:10px; border:1px solid #ccc; text-align:center; }
-    table th { background:#ffcc00; font-weight:bold; }
-    input, select { padding:10px; width:95%; border-radius:6px; border:1px solid #aaa; margin-bottom:10px; }
-    .btn { padding:10px 15px; background:#ffcc00; border:none; cursor:pointer; font-weight:bold; border-radius:6px; }
-    .delete-btn { background:red; color:white; border:none; padding:6px 12px; border-radius:6px; cursor:pointer; }
-    #loginPage { display:flex; justify-content:center; align-items:center; height:100vh; background:#fff2a8; }
-    #loginBox { background:white; padding:25px; border-radius:10px; width:300px; box-shadow:0 0 10px #0004; text-align:center; }
-    @media(max-width:600px){ header{font-size:24px;} nav button{padding:8px 12px;} }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shiva Fitness</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#fff8d2;}
+header{background:linear-gradient(45deg,#ffcc00,#ffdf4d);padding:25px;text-align:center;font-size:32px;font-weight:bold;}
+nav{background:#ffcc00;padding:12px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;}
+nav button{padding:10px 20px;background:#000;color:#ffcc00;border:none;border-radius:6px;cursor:pointer;font-weight:bold;}
+section{padding:20px;display:none;}
+.active{display:block;}
+.card{background:white;padding:20px;border-radius:10px;margin-bottom:20px;box-shadow:0 0 10px #0003;}
+table{width:100%;border-collapse:collapse;background:white;}
+table th,table td{padding:10px;border:1px solid #ccc;text-align:center;}
+table th{background:#ffcc00;}
+input,select{padding:10px;width:95%;border-radius:6px;border:1px solid #aaa;margin-bottom:10px;}
+.btn{padding:10px 15px;background:#ffcc00;border:none;font-weight:bold;border-radius:6px;}
+.delete-btn{background:red;color:white;border:none;padding:6px 12px;border-radius:6px;cursor:pointer;}
+#loginPage{display:flex;justify-content:center;align-items:center;height:100vh;background:#fff2a8;}
+#loginBox{background:white;padding:25px;border-radius:10px;width:300px;text-align:center;}
+</style>
 </head>
+
 <body>
 
-<!-- LOGIN PAGE -->
 <div id="loginPage">
   <div id="loginBox">
     <h2>Admin Login</h2>
-    <input type="password" id="adminPass" placeholder="Enter Password" />
+    <input type="password" id="adminPass" placeholder="Enter Password">
     <button class="btn" onclick="login()">Login</button>
   </div>
 </div>
 
-<!-- MAIN APP -->
 <div id="app" style="display:none;">
-<header>Shiva FITNESS</header>
+
+<header>
+  <img src="logo.png" height="60" style="vertical-align:middle;" alt='x'>
+  SHIVA FITNESS
+</header>
+
 <nav>
   <button onclick="showPage('intro')">Gym Intro</button>
   <button onclick="showPage('members')">Members</button>
@@ -47,22 +52,24 @@
 <section id="intro" class="active">
   <div class="card">
     <h2>Welcome to Shiva Fitness Gym</h2>
-    <p>Transform your fitness journey with strength, cardio, training programs and premium equipment.Here you are provided with the best machines and equipments...!</p>
+    <p>Transform your fitness journey with strength and training.</p>
   </div>
 </section>
 
 <section id="members">
   <div class="card">
     <h2>Add Member</h2>
-    <input id="name" placeholder="Member Name" />
-    <input id="admission" type="date" />
+    <input id="name" placeholder="Member Name">
+    <input id="email" placeholder="Email ID">
+    <input id="phone" placeholder="WhatsApp Number">
+    <input id="admission" type="date">
     <select id="plan">
-      <option value="Monthly">Monthly</option>
-      <option value="3 Months">3 Months</option>
-      <option value="6 Months">6 Months</option>
-      <option value="1 Year">1 Year</option>
+      <option>Monthly</option>
+      <option>3 Months</option>
+      <option>6 Months</option>
+      <option>1 Year</option>
     </select>
-    <input id="fees" placeholder="Fees ₹" />
+    <input id="fees" type="number" placeholder="Fees ₹">
     <button class="btn" onclick="addMember()">Add</button>
   </div>
 
@@ -73,7 +80,7 @@
         <tr>
           <th>ID</th>
           <th>Name</th>
-          <th>Admission</th>
+          <th>Expiry</th>
           <th>Plan</th>
           <th>Fees</th>
           <th>Action</th>
@@ -85,108 +92,127 @@
 </section>
 
 <section id="media">
-  <div class="card"><h2>Photos</h2>
-    <div style="height:450px;background:#ffe98a;border-radius:8px;">
-<img src="https://i.ibb.co/bMzMvLQj/1770574994743.jpg" alt="1770574994743" border="2" height= 200px width=150px ></div></div>
-  <div class="card"><h2>Videos</h2><div style="height:150px;background:#ffe98a;border-radius:8px;"></div></div>
+  <div class="card">
+    <h2>Photos</h2>
+    <img src="https://i.ibb.co/bMzMvLQj/1770574994743.jpg" height="200">
+  </div>
 </section>
 
-<!-- PASSWORD SETTINGS -->
 <section id="settings">
   <div class="card">
     <h2>Change Admin Password</h2>
-
-  <input type="password" id="oldPass" placeholder="Old Password" />
-    <input type="password" id="newPass" placeholder="New Password" />
-    <input type="password" id="confirmPass" placeholder="Confirm New Password" />
-
-   <button class="btn" onclick="changePassword()">Update Password</button>
+    <input type="password" id="oldPass" placeholder="Old Password">
+    <input type="password" id="newPass" placeholder="New Password">
+    <input type="password" id="confirmPass" placeholder="Confirm Password">
+    <button class="btn" onclick="changePassword()">Update</button>
   </div>
 </section>
 
 </div>
 
 <script>
+/* ===== CHANGE THESE LATER ===== */
+const OWNER_EMAIL = "yourgymemail@gmail.com";
+const OWNER_WHATSAPP = "919999999999";
+/* ============================= */
+
 let PASSWORD = localStorage.getItem("gymPassword") || "0908";
-let id = 1;
 let members = JSON.parse(localStorage.getItem("members")) || [];
+let id = members.length ? members[members.length-1].id + 1 : 1;
 
 function login(){
-  let pass = document.getElementById('adminPass').value;
-  if(pass === PASSWORD){
-    document.getElementById('loginPage').style.display='none';
-    document.getElementById('app').style.display='block';
+  if(adminPass.value === PASSWORD){
+    loginPage.style.display="none";
+    app.style.display="block";
     loadMembers();
-  } else alert('Wrong Password');
+    checkExpiry();
+  } else alert("Wrong Password");
 }
 
-function logout(){ location.reload(); }
+function logout(){location.reload();}
 
-function showPage(page){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(page).classList.add('active');
+function showPage(p){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(p).classList.add("active");
 }
 
-function saveMembers(){ localStorage.setItem("members", JSON.stringify(members)); }
-
-function loadMembers(){
-  let table = document.getElementById('memberTable');
-  table.innerHTML = "";
-  members.forEach(m=>{ table.innerHTML += rowHTML(m); });
-  if(members.length>0) id = members[members.length-1].id + 1;
+function saveMembers(){
+  localStorage.setItem("members", JSON.stringify(members));
 }
 
-function rowHTML(m){
-  return `<tr>
-    <td>${m.id}</td>
-    <td>${m.name}</td>
-    <td>${m.admission}</td>
-    <td>${m.plan}</td>
-    <td>₹${m.fees}</td>
-    <td><button class='delete-btn' onclick='deleteMember(${m.id})'>Delete</button></td>
-  </tr>`;
+function getExpiryDate(admission, plan){
+  let d = new Date(admission);
+  if(plan==="Monthly") d.setMonth(d.getMonth()+1);
+  if(plan==="3 Months") d.setMonth(d.getMonth()+3);
+  if(plan==="6 Months") d.setMonth(d.getMonth()+6);
+  if(plan==="1 Year") d.setFullYear(d.getFullYear()+1);
+  return d.toISOString().split("T")[0];
 }
 
 function addMember(){
-  let name=document.getElementById('name').value;
-  let admission=document.getElementById('admission').value;
-  let plan=document.getElementById('plan').value;
-  let fees=document.getElementById('fees').value;
-  if(!name||!admission||!fees){ alert('Fill all fields'); return; }
-  let m={ id, name, admission, plan, fees };
+  let m = {
+    id,
+    name:name.value,
+    email:email.value,
+    phone:phone.value,
+    plan:plan.value,
+    fees:fees.value,
+    expiry:getExpiryDate(admission.value, plan.value),
+    notified:false
+  };
+  if(!m.name||!m.email||!m.phone||!fees.value){alert("Fill all fields");return;}
   members.push(m);
-  saveMembers();
-  loadMembers();
   id++;
-  document.getElementById('name').value="";
-  document.getElementById('fees').value="";
-}
-
-function deleteMember(mid){
-  members = members.filter(m=>m.id !== mid);
   saveMembers();
   loadMembers();
 }
 
-// CHANGE PASSWORD
+function loadMembers(){
+  memberTable.innerHTML="";
+  members.forEach(m=>{
+    memberTable.innerHTML+=`
+    <tr>
+      <td>${m.id}</td>
+      <td>${m.name}</td>
+      <td>${m.expiry}</td>
+      <td>${m.plan}</td>
+      <td>₹${m.fees}</td>
+      <td><button class="delete-btn" onclick="deleteMember(${m.id})">Delete</button></td>
+    </tr>`;
+  });
+}
+
+function deleteMember(i){
+  members = members.filter(m=>m.id!==i);
+  saveMembers();
+  loadMembers();
+}
+
+function checkExpiry(){
+  let today = new Date().toISOString().split("T")[0];
+  members.forEach(m=>{
+    if(m.expiry < today && !m.notified){
+      let msg = `Hi ${m.name}, your Shiva Fitness subscription has expired.`;
+      window.open(`https://wa.me/${m.phone}?text=${encodeURIComponent(msg)}`);
+      window.open(`https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent("Expired member: "+m.name)}`);
+      console.log("Email sent to:", m.email, OWNER_EMAIL);
+      m.notified=true;
+    }
+  });
+  saveMembers();
+}
+
 function changePassword(){
-  let oldP = document.getElementById('oldPass').value;
-  let newP = document.getElementById('newPass').value;
-  let conP = document.getElementById('confirmPass').value;
-
-  if(oldP !== PASSWORD){ alert('Old password is incorrect'); return; }
-  if(newP.length < 4){ alert('Password must be at least 4 characters'); return; }
-  if(newP !== conP){ alert('New passwords do not match'); return; }
-
-  PASSWORD = newP;
-  localStorage.setItem("gymPassword", newP);
-  alert('Password updated successfully!');
-
-  document.getElementById('oldPass').value="";
-  document.getElementById('newPass').value="";
-  document.getElementById('confirmPass').value="";
+  if(oldPass.value!==PASSWORD){alert("Wrong password");return;}
+  if(newPass.value!==confirmPass.value){alert("Mismatch");return;}
+  PASSWORD=newPass.value;
+  localStorage.setItem("gymPassword",PASSWORD);
+  alert("Password Updated");
 }
 </script>
 
 </body>
+<footer style="text-align:center;padding:15px;background:#ffcc00;font-weight:bold;">
+  © 2026 Shiva Fitness. All Rights Reserved.by <b>><i>ADITYA CHATURVEDI</i>></b>
+</footer>
 </html>
