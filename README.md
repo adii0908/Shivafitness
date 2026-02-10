@@ -37,7 +37,7 @@ input,select{padding:10px;width:95%;border-radius:6px;border:1px solid #aaa;marg
 <div id="app" style="display:none;">
 
 <header>
-  <img src="logo.png" height="60" style="vertical-align:middle;" alt='x'>
+ <img src="https://i.ibb.co/6czBTNjH/1770705078726.jpg" alt="1770705078726"  height="60" style="vertical-align:middle;" >
   SHIVA FITNESS
 </header>
 
